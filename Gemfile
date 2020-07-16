@@ -65,3 +65,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.9.0'
 gem 'devise'
 gem 'pg', group: :production 
+gem 'haml-rails'
+gem 'erb2haml'  

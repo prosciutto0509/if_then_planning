@@ -1,0 +1,10 @@
+%body
+  %header.header
+    %nav.nav
+      %ul.header_menu
+        %li.nav-link= link_to current_user.name, edit_user_path(current_user.id)
+        %li.header_menu_title= link_to "if_then_planning", root_path, class: "nav-link"
+        %li
+          %ul.header_menu_inner
+            %li= link_to "リストを作成", new_list_path, class: "nav-link listNew"
+            %li= link_to "サインアウト", destroy_user_session_path, class: "nav-link",method: :delete
