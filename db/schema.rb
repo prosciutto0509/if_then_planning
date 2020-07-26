@@ -10,26 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_094041) do
+ActiveRecord::Schema.define(version: 2020_07_22_065831) do
 
-  create_table "cards", force: :cascade do |t|
-    t.string "title", limit: 255, null: false
-    t.text "memo", limit: 1000
-    t.integer "list_id", null: false
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "memo"
+    t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "where"
     t.index ["list_id"], name: "index_cards_on_list_id"
   end
 
-  create_table "lists", force: :cascade do |t|
+  create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time_zone"
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -42,4 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_27_094041) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "lists"
+  add_foreign_key "lists", "users"
 end

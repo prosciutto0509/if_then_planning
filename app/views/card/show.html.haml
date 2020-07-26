@@ -2,13 +2,13 @@
   .container
     .cardContents
       .cardContents_title
-        %div タイトル
+        %div 継続させたいこと
         %h2= @card.title
       .cardContents_memo
-        %div メモ
+        %div 詳細
         %div= @card.memo
       .cardContents_listStatus
-        %div リスト名
+        %div 普段行っていること
         %div= @card.list.title
       .cardContents_btnArea
         = link_to '編集する', edit_list_card_path(@card.list, @card), class: "edit_btn"
