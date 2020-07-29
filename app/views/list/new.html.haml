@@ -8,12 +8,17 @@
         = f.text_field :title, autofocus: true, class: "form-control listName", placeholder: "例：コーヒーを飲む" 
       .listnewForm_time_zone
         .time 普段行っていることの時間帯
-        = f.check_box :time_zone, {multiple: true},"朝"
-        朝
-        = f.check_box  :time_zone, {multiple: true},"昼"
-        昼
-        = f.check_box  :time_zone, {multiple: true},"夕方"
-        夕方
-        = f.check_box  :time_zone, {multiple: true},"夜"
-        夜
+        %ul.time_ul
+          %li.time_li
+            = f.check_box :time_zone, {multiple: true},"朝"
+            朝
+          %li.time_li
+            = f.check_box  :time_zone, {multiple: true},"昼"
+            昼
+          %li.time_li
+            = f.check_box  :time_zone, {multiple: true},"夕方"
+            夕方
+          %li.time_li
+            = f.check_box  :time_zone, {multiple: true},"夜"
+            夜
         .text-center= f.submit "作成する", class: "submitBtn"
