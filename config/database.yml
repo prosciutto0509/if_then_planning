@@ -52,3 +52,7 @@ production:
   database: if_then_planning_production
   username: if_then_planning
   password: <%= ENV['if_then_planning_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: localhost
