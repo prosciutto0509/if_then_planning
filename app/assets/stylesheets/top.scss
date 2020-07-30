@@ -21,7 +21,7 @@
       }
       &_header {
         margin-bottom: 20px;
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: space-between;
         &_title {
@@ -29,7 +29,10 @@
           margin: 0;
         }
         &_action {
+          margin-right: 10px;
+          text-align: end;
           .fa-trash {
+            margin-right: 5px;
             font-size: 18px;
             color: #660000;
           }
@@ -73,7 +76,8 @@
   }
 }
 
-.fa-pen{color:#1760a0;}
+.fa-pen{color:#1760a0;
+  text-align: end;}
 .topIllustration{
   display: flex;
   flex-direction: column;
