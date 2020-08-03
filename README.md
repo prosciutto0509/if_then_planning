@@ -36,6 +36,7 @@
 
 # if_then_planning
 "if_then_planning" is an app that helps you continue 
+
 "if_then_planning"は習慣化を助けるアプリです。
 
 
@@ -50,7 +51,7 @@ You can get courage by touching the owl illustration
 Owl was created to improve my technical ability and motivate users.
 
 自分は何かを継続して取り組むのが得意ではなかったのでメンタリストDaigoの本を読み、そこからヒントを得てこのアプリを作りました。
-その本から得た１番のヒントは、人間は何かをした後に何かをすると結びつけると継続して取り組むのが楽になるということです。
+その本から得た１番のヒントは、人間は何かをした後に何かをすると決めることで継続して取り組むのが楽になるということです。
 このアプリでは、最初に普段行っている日常的なルーティーンを登録し、そこに継続させたいことを登録します。そうすることで自分で意識するようになり、継続を促せると思います。
 自分の場合は、コーヒーが好きでほぼ毎日飲んでしまうので、その度にスクワッド15回を課すことで、コーヒーを飲むたび足を鍛えることができます。
 ToDoをするという面でTrelloに似ていると思ったので、ビューの面でヒントにしました。
