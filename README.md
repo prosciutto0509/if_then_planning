@@ -6,7 +6,7 @@
 |email|string| null:false, unique: true|
 |password|string| null:false|
 |name|string|null:false|
-
+|login_date|dare|
 ### Association
 - has_many :lists,dependent: :destroy
 
