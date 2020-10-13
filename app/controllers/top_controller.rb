@@ -12,7 +12,7 @@ elsif @user.login_date + 1 == Date.today
 @user.login_date = Date.today
 else
   @user.login_date = Date.today
-  @user.total_login = 1
+ 
 end
 @user.save
  
