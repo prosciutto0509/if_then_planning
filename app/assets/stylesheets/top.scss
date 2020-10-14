@@ -56,8 +56,11 @@
           &_detail {
             display: none;
             &.is-exist {
-              display: block;
+          
+              display: flex;
+              justify-content:flex-end;
               color: #999;
+           
               & > i {
                 display: block;
               }
@@ -97,7 +100,7 @@ position: fixed;
 }
 .balloon1 {
   position: relative;
-  // display: none;
+  display: none;
   margin-left: 12px;
   padding: 12px 10px;
   width: 155px;

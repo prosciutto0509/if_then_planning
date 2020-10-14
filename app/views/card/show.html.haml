@@ -4,8 +4,11 @@
       .cardContents_title
         %div 継続させたいこと
         %h2= @card.title
+      .cardContents_title
+        %div どこでやるか
+        %h2= @card.where
       .cardContents_memo
-        %div 詳細
+        %div 目標
         %div= @card.memo
       .cardContents_listStatus
         %div 普段行っていること
