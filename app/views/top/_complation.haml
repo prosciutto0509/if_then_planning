@@ -1,0 +1,16 @@
+- if card.complete == 0
+  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done<%=card.id%>",remote:true do
+    .card
+      継続させたいこと
+      %h3.card_title= card.title
+      どこでやるか
+      %h3.card_where= card.where
+      目標
+      %h4.card_memo= card.memo
+      .card_detail.is-exist
+        = link_to(content_tag(:i, '', class: 'fas fa-pen'), list_card_path(list,card))
+- else
+  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done",remote:true do
+    .card
+      %h3.card_title= card.title
+      は完了しました。

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :card do
     member do
      get  'complete'
+  
     end
   end
 end

@@ -42,8 +42,10 @@ before_action :set_card, only: [:show, :edit, :update,:destroy,:complete]
     else
       @card.complete = 0
     end
-@card.save
-    redirect_to :root
+
+    @kansei = @card.complete
+    @card.save
+
   end
   private
   def set_card
