@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_235802) do
+ActiveRecord::Schema.define(version: 2020_10_16_042551) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_235802) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "where"
+    t.integer "complete", default: 0, null: false
     t.index ["list_id"], name: "index_cards_on_list_id"
   end
 

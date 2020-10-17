@@ -15,7 +15,7 @@ end
 
 if @user.login_date == Date.today 
 
-elsif @user.login_date +1 == Date.today
+elsif @user.login_date + 1 == Date.today
 @user.total_login += 1
 @user.continous_login += 1
 @user.login_date = Date.today

@@ -50,6 +50,7 @@
         .card {
           margin-bottom: 10px;
           padding: 10px;
+          
           &_title {
             font-size: 30px;
           }
@@ -60,7 +61,6 @@
               display: flex;
               justify-content:flex-end;
               color: #999;
-           
               & > i {
                 display: block;
               }
@@ -128,4 +128,13 @@ position: fixed;
   word-break: normal;
   margin: 0;
   padding: 0;
+}
+
+
+.change{
+  background-color: black;
+}
+.card_link{
+  list-style: none;
+  text-decoration: none !important;
 }

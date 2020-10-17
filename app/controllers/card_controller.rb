@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-before_action :set_card, only: [:show, :edit, :update,:destroy]
+before_action :set_card, only: [:show, :edit, :update,:destroy,:complete]
   def new
     @card = Card.new
     @list = List.find_by(id: params[:list_id])
@@ -35,6 +35,16 @@ before_action :set_card, only: [:show, :edit, :update,:destroy]
     redirect_to :root
   end
 
+
+  def complete
+    if @card.complete == 0
+      @card.complete = 1
+    else
+      @card.complete = 0
+    end
+@card.save
+    redirect_to :root
+  end
   private
   def set_card
     @card = Card.find_by(id: params[:id])
