@@ -30,5 +30,20 @@ end
 
   end
 
+  def complete
+    
+    @card = Card.find_by(id: params[:id])
+
+    if @card.complete == 0
+      @card.complete = 1
+    else
+      @card.complete = 0
+    end
+
+    @card.save
+
+  end
+
+
  
 end

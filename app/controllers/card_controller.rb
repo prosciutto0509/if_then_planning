@@ -36,16 +36,7 @@ before_action :set_card, only: [:show, :edit, :update,:destroy,:complete]
   end
 
 
-  def complete
-    if @card.complete == 0
-      @card.complete = 1
-    else
-      @card.complete = 0
-    end
 
-    @card.save
-
-  end
   private
   def set_card
     @card = Card.find_by(id: params[:id])
