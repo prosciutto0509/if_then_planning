@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :card, except: :index
   resources :card do
     member do
-     get  'complete'
+     post  'complete'
   
     end
   end

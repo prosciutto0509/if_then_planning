@@ -1,5 +1,5 @@
 - if card.complete == 0
-  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done<%=card.id%>",remote:true do
+  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done<%=card.id%>",remote:true, method: :post do
     .card
       継続させたいこと
       %h3.card_title= card.title
@@ -10,7 +10,7 @@
       .card_detail.is-exist
         = link_to(content_tag(:i, '', class: 'fas fa-pen'), list_card_path(list,card))
 - else
-  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done",remote:true do
+  = link_to complete_list_card_path(list,card), class: "card_link", style: "color:black;",id: "done<%=card.id%>",remote:true, method: :post do
     .card
       %h3.card_title= card.title
       は完了しました。

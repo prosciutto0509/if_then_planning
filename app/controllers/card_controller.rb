@@ -43,7 +43,6 @@ before_action :set_card, only: [:show, :edit, :update,:destroy,:complete]
       @card.complete = 0
     end
 
-    @kansei = @card.complete
     @card.save
 
   end
