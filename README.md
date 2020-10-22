@@ -6,10 +6,13 @@
 |email|string| null:false, unique: true|
 |password|string| null:false|
 |name|string|null:false|
-|login_date|dare|
+|login_date|date||
+|total_login|integer||
+|continous_login|integer||
+
 ### Association
 - has_many :lists,dependent: :destroy
-
+- has_many :complete
 
 # listsテーブル
 |Column|Type|Options|
@@ -29,9 +32,23 @@
 |title|string|length: {in: 1..255}|
 |memo|string|length: { maximum: 1000}|
 |where|string|length: { in: 1..255}|
+|list_id|integer||
 
 ### Association
 - belongs_to :list
+
+
+# completesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer||
+|card_id|integer||
+
+### Association
+- belongs_to :card
+- belongs_to :user
+
+
 
 
 # if_then_planning
@@ -49,14 +66,14 @@ I paid attention to how to use colors
 You can get courage by touching the owl illustration
 Owl was created to improve my technical ability and motivate users.
 
-自分は何かを継続して取り組むのが得意ではなかったのでメンタリストDaigoの本を読み、そこからヒントを得てこのアプリを作りました。
+私は何かを継続して取り組むのが得意ではなかったのでメンタリストDaigoさんの本を読み、そこからヒントを得てこのアプリを作りました。
 その本から得た１番のヒントは、人間は何かをした後に何かをすると結びつけると継続して取り組むのが楽になるということです。
 このアプリでは、最初に普段行っている日常的なルーティーンを登録し、そこに継続させたいことを登録します。そうすることで自分で意識するようになり、継続を促せると思います。
 自分の場合は、コーヒーが好きでほぼ毎日飲んでしまうので、その度にスクワッド15回を課すことで、コーヒーを飲むたび足を鍛えることができます。
 ToDoをするという面でTrelloに似ていると思ったので、ビューの面でヒントにしました。
-また右下にふくろうを配置してそれに触れると、元気のでる（と著者が感じる）ことばを吹き出しで話してくれます。
-これをつけた理由は、まず元気の出る言葉を言って励ましたいという理由が一つと、人間は適度に監視されている感覚があった方が継続しやすいという効果を狙ったものです。
-ちなみにjsの勉強にもなりました。
+また右下にふくろうを配置してそれに触れると、連続のログインと通算のログインがみられるようにしてあります。
+継続したい内容をクリックしたら非同期で完了に切り替わります。
+
 
 
 # Requirement

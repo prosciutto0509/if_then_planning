@@ -1,17 +1,23 @@
 class CardController < ApplicationController
-before_action :set_card, only: [:show, :edit, :update,:destroy,:complete]
+before_action :set_card, only: [:show, :edit, :update,:destroy]
   def new
     @card = Card.new
     @list = List.find_by(id: params[:list_id])
+  
   end
 
   def create
+   
     @card = Card.new(card_params)
+   
     if @card.save
+   
+
       redirect_to :root
     else
       render action: :new
     end
+    
   end
 
   def show
