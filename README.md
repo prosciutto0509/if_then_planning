@@ -53,6 +53,7 @@
 
 # if_then_planning
 "if_then_planning" is an app that helps you continue 
+
 "if_then_planning"は習慣化を助けるアプリです。
 
 
@@ -66,19 +67,17 @@ I paid attention to how to use colors
 You can get courage by touching the owl illustration
 Owl was created to improve my technical ability and motivate users.
 
+
 私は何かを継続して取り組むのが得意ではなかったのでメンタリストDaigoさんの本を読み、そこからヒントを得てこのアプリを作りました。
 その本から得た１番のヒントは、人間は何かをした後に何かをすると結びつけると継続して取り組むのが楽になるということです。
 このアプリでは、最初に普段行っている日常的なルーティーンを登録し、そこに継続させたいことを登録します。そうすることで自分で意識するようになり、継続を促せると思います。
 自分の場合は、コーヒーが好きでほぼ毎日飲んでしまうので、その度にスクワッド15回を課すことで、コーヒーを飲むたび足を鍛えることができます。
+
 ToDoをするという面でTrelloに似ていると思ったので、ビューの面でヒントにしました。
 また右下にふくろうを配置してそれに触れると、連続のログインと通算のログインがみられるようにしてあります。
 継続したい内容をクリックしたら非同期で完了に切り替わります。
 
 
-
-# Requirement
-Not particularly
-今のところ無いです。
 
 # Usage
 Please access this URL
@@ -93,6 +92,11 @@ https://ifthenplanning.herokuapp.com/
 まず、右上のヘッダーのアイコンから、普段から行っていることを登録します。
 そうすることで、新しくビューが作成されるので、”継続させたいことを結びつける”のところから継続させたいことを登録します。
 
+# テストアカウント
+メールアドレス
+aaa@aaa
+パスワード
+aaaaaaaa
 
 # Author
 * 安田悠磨
