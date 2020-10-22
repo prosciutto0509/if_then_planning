@@ -13,23 +13,15 @@
             = link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_list_path(list))
         .cardWrapper
           - list.cards.each do |card|
-            = link_to list_card_path(list, card), class:"cardDetail_link" do
-              .card
-                継続させたいこと
-                %h3.card_title= card.title
-                どこでやることなのか
-                %h3.card_where= card.where
-                ポイント
-                %h4.card_memo= card.memo
-                - if card.memo.size > 0
-                  .card_detail.is-exist
-                    %i.fas.fa-pen
+            = render partial: 'complete/complation', locals: { card: card, list: list}
           .addCard
             %i.far.fa-plus-square
             = link_to "継続させたいことを結びつける", new_list_card_path(list), class: "addCard_link"
   .topIllustration
     .balloon1
       %p#balloon1_p.balloon1_p
-        mkonnna
+        連続 #{@user.continous_login}日目 
+        %br 
+        合計 #{@user.total_login}日目
     = image_tag 'pixta_67204892_S (2).png',class:"topIllustration__samurai",id:'samurai'
 

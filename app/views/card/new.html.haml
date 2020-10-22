@@ -6,11 +6,11 @@
         %p.text-danger タイトルは1～255文字以内で入力してください
       .cardnewForm_title
         = f.label :title,"あなたが継続したいこと "
-        = f.text_field :title, autofocus: true, class: "form-control", placeholder: "例：スクワッド15回"
+        = f.text_field :title, autofocus: true, class: "form-control", placeholder: "例：スクワッド"
       .cardnewForm_title.cardformWhere
-        = f.label :where, "どの場所でやることですか？"
+        = f.label :where, "どの場所でやるか"
         = f.text_field :where, autofocus: true, class: "form-control", placeholder: "例：家の中"
       .cardnewForm_memo
-        = f.label :memo,"より詳しく"
-        = f.text_area :memo, autofocus: true, class: "form-control", placeholder: "詳細"
+        = f.label :memo,"目標達成の条件"
+        = f.text_field :memo, autofocus: true, class: "form-control", placeholder: "例：15回できたら"
         .text-center= f.submit "作成する", class: "submitBtn"

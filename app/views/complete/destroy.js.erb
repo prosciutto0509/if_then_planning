@@ -1,0 +1,1 @@
+$('#done<%=@card.id%>').html("<%= j(render partial: 'complete/complation', locals: { card: @card, list: @list}) %>");

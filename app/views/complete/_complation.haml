@@ -1,0 +1,16 @@
+%div{id: "done#{card.id}"}
+  -@complete = Complete.find_by(user_id: current_user.id, card_id: card.id)
+  - unless @complete.present?
+    = link_to(list_card_complete_index_path(list,card), class: "card_link", style: "color:black;",method: :post,remote: true,) do
+      .card
+        継続させたいこと
+        %h3.card_title= card.title
+        どこでやるか
+        %h3.card_where= card.where
+        目標
+        %h4.card_memo= card.memo     
+  - else
+    = link_to(list_card_complete_path(list,card,@complete.id), class: "card_link", style: "color:black;",method: :delete,remote: true)do
+      .card
+        %h3.card_title= card.title
+        は完了しました。

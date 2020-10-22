@@ -4,12 +4,12 @@
       - if @card.errors.any?
         %p.text-danger タイトルは1～255文字以内で入力してください
       .cardeditForm_title
-        = f.label :title
-        = f.text_field :title, class: "form-control", placeholder: "カード名"
-      .cardeditForm_memo
-        = f.label :memo
-        = f.text_area :memo, class: "form-control", placeholder: "詳細"
-      .cardeditForm_memo
-        %label リスト名
-        = select :card, :list_id, @lists.map{ |l| [l.title, l.id] }, {}, { class: 'form-control' }
+        = f.label :title,"あなたが継続したいこと "
+        = f.text_field :title, autofocus: true, class: "form-control", placeholder: "例：スクワッド"
+        .cardnewForm_title.cardformWhere
+          = f.label :where, "どの場所でやるか"
+          = f.text_field :where, autofocus: true, class: "form-control", placeholder: "例：家の中"
+        .cardnewForm_memo
+          = f.label :memo,"目標達成の条件"
+          = f.text_field :memo, autofocus: true, class: "form-control", placeholder: "例：15回できたら"
       .text-center= f.submit "更新する", class: "submitBtn"
