@@ -49,10 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: if_then_planning_production
-  username: if_then_planning
-  password: <%= ENV['if_then_planning_DATABASE_PASSWORD'] %>
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  host: localhost
+  host: <%= Rails.application.credentials.rds[:host] %>
+  database: <%= Rails.application.credentials.rds[:database] %>
+  username: <%= Rails.application.credentials.rds[:username] %>
+  password: <%= Rails.application.credentials.rds[:password] %>
