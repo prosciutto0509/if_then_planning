@@ -12,7 +12,7 @@ services:
     stdin_open: true
 
   nginx:
-    build: nginx
+    build: containers/nginx
     ports:
       - "80:80"
     volumes_from:
