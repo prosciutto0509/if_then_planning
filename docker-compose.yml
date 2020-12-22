@@ -1,11 +1,15 @@
-version: '2'
+version: '3'
 services:
   web:
     build: .
-    volumes:
+    ports:  
+      - '3000:3000'
+    volumes:  
       - /app/log # persist logs
     depends_on:
       - db
+    tty: true
+    stdin_open: true
 
   nginx:
     build: nginx
