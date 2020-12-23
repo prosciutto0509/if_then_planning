@@ -10,6 +10,8 @@ services:
       - db
     tty: true
     stdin_open: true
+    links: 
+      - db
 
   nginx:
     build: containers/nginx
@@ -21,4 +23,11 @@ services:
       - web
 
   db:
-    image: mysql2
+    image: mysql
+    environment:
+      - DATABASE_NAME=$DATABASE_NAME
+      - USER_NAME=USER_NAME=$USER_NAME=USER_NAME
+      - DATABASE_PASSWORD=$DATABASE_PASSWORD
+      - END_POINT=$END_POINT
+    ports: 
+      - "3306:3306"
