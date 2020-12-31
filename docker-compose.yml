@@ -5,8 +5,8 @@ services:
     ports:  
       - '3000:3000'
     volumes:  
-      - tmp-data:/app/tmp/sockets
-      - public-data:/app/public
+      - tmp-data:/if_then_planning/tmp/sockets/puma.sock
+      - public-data:/if_then_planning/public
     depends_on:
       - db
     tty: true
@@ -19,8 +19,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - tmp-data:/app/tmp/sockets
-      - public-data:/app/public
+      - tmp-data:/if_then_planning/tmp/sockets/puma.sock
+      - public-data:/if_then_planning/public
     depends_on:
       - web
 
@@ -31,9 +31,10 @@ services:
       - USER_NAME=${USER_NAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - END_POINT=${END_POINT}
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
     ports: 
       - "3306:3306"
   
-  volumes:
-    public-data:
-    tmp-data:
+volumes:
+  public-data:
+  tmp-data:

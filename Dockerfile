@@ -3,18 +3,17 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential libpq-dev nodejs
 
 # Rails App
-RUN mkdir /app
-WORKDIR /app
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
+RUN mkdir /if_then_planning
+WORKDIR /if_then_planning
+ADD Gemfile /if_then_planning/Gemfile
+ADD Gemfile.lock /if_then_planning/Gemfile.lock
 RUN gem install bundler 
 RUN bundle install
-ADD . /app
+ADD . /if_then_planning
 RUN mkdir -p tmp/sockets
 
 # Expose volumes to frontend
-VOLUME /app/public
-VOLUME /app/tmp
+
 
 # Start Server
 # TODO: environment
