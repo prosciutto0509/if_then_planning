@@ -33,7 +33,8 @@ preload_app!
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 app_root = File.expand_path("../..", __FILE__)
-bind "unix://app/tmp/sockets/puma.sock"
+bind "unix://if_then_planning/tmp/sockets/puma.sock"
+
 on_worker_boot do
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
 end
