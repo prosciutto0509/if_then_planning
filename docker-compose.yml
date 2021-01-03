@@ -5,7 +5,7 @@ services:
     ports:  
       - '3000:3000'
     volumes:  
-      - tmp-data:/if_then_planning/tmp/sockets/puma.sock
+      - tmp-data:/if_then_planning/tmp/sockets
       - public-data:/if_then_planning/public
     depends_on:
       - db
@@ -19,7 +19,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - tmp-data:/if_then_planning/tmp/sockets/puma.sock
+      - tmp-data:/if_then_planning/tmp/sockets
       - public-data:/if_then_planning/public
     depends_on:
       - web
