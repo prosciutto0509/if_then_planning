@@ -4,6 +4,12 @@ services:
     build: .
     ports:  
       - '3000:3000'
+    environment:
+      - RAILS_ENV=${RAILS_ENV}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - USER_NAME=${USER_NAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - END_POINT=${END_POINT}
     volumes:  
       - tmp-data:/if_then_planning/tmp/sockets
       - public-data:/if_then_planning/public
@@ -27,11 +33,10 @@ services:
   db:
     image: mysql
     environment:
-      - DATABASE_NAME=${DATABASE_NAME}
-      - USER_NAME=${USER_NAME}
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
-      - END_POINT=${END_POINT}
-      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: if_then_planning_db
     ports: 
       - "3306:3306"
   
